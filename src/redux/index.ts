@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { connectRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'react-router-redux';
@@ -10,7 +10,7 @@ const store = configureStore({
         ...models,
         router: connectRouter(history),
     },
-    middleware: [routerMiddleware(history)],
+    middleware: [...getDefaultMiddleware(), routerMiddleware(history)],
 });
 
 export type RootState = ReturnType<typeof store.getState>;

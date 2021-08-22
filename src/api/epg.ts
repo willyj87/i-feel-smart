@@ -8,9 +8,9 @@ export const fetchPrograms = async () :Promise<AxiosResponse> => {
             limit: process.env.REACT_APP_API_LIMIT,
             channel: process.env.REACT_APP_API_EPG_CHANNEL
         }
-    }).then(response => response.data.content);
+    }).then(response => response.data.contents);
 }
 
-export const fetchProgram = async (id :string) :Promise<AxiosResponse> => {
+export const fetchProgram = async (id :number) :Promise<AxiosResponse> => {
     return client.get(`/epg/program/${id}`).then(response => response.data.content);
 }

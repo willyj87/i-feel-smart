@@ -7,9 +7,9 @@ export const fetchContents = async () :Promise<AxiosResponse> => {
             dataset: process.env.REACT_APP_API_DATASET,
             limit: process.env.REACT_APP_API_LIMIT
         }
-    }).then(response => response.data.content);
+    }).then(response => response.data.contents);
 }
 
-export const fetchContent = async (id :string) :Promise<AxiosResponse> => {
+export const fetchContent = async (id :number) :Promise<AxiosResponse> => {
     return client.get(`/vod/content/${id}`).then(response => response.data.content);
 }

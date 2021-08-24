@@ -1,7 +1,7 @@
-import { AxiosResponse } from "axios";
+import { ProgramType } from "../helpers/interfaces";
 import client from "../lib/client";
 
-export const fetchPrograms = async () :Promise<AxiosResponse> => {
+export const fetchPrograms = async () :Promise<[ProgramType]> => {
     return client.get('/epg/programs', {
         params: {
             dataset: process.env.REACT_APP_API_DATASET,
@@ -11,6 +11,6 @@ export const fetchPrograms = async () :Promise<AxiosResponse> => {
     }).then(response => response.data.contents);
 }
 
-export const fetchProgram = async (id :number) :Promise<AxiosResponse> => {
+export const fetchProgram = async (id :number) :Promise<ProgramType> => {
     return client.get(`/epg/program/${id}`).then(response => response.data.content);
 }

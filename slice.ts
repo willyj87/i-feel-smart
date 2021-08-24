@@ -1,10 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchContent, fetchContents } from '../../api/vod';
-import { ContentType } from '../../helpers/interfaces';
 
+
+interface ContentState {
+    title: string,
+    id: number,
+    summary: string,
+    pictures: {
+        thumbnails: string[]
+    }
+}
 interface VodState {
-    contents: [ContentType],
-    content: ContentType,
+    contents: [ContentState],
+    content: ContentState,
     status: string,
     error: string,
 }
@@ -13,7 +21,6 @@ const initialState: VodState = {
     contents: [{
         title: '',
         summary: '',
-        genre: '',
         pictures: {
             thumbnails:['']
         },
@@ -22,7 +29,6 @@ const initialState: VodState = {
     content: {
         title: '',
         summary: '',
-        genre: '',
         pictures: {
             thumbnails:['']
         },
@@ -75,8 +81,8 @@ export const vod = createSlice({
     }
 });
 
-export const selectContents = (state: { vod: { contents: [ContentType]; }; }) :[ContentType] => state.vod.contents;
-export const selectContent = (state: { vod: { content: ContentType; }; }) :ContentType => state.vod.content;
+export const selectContents = (state: { vod: { contents: [ContentState]; }; }) :[ContentState] => state.vod.contents;
+export const selectContent = (state: { vod: { content: ContentState; }; }) :ContentState => state.vod.content;
 
 
 export default vod.reducer;

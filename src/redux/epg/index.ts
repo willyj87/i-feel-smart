@@ -1,16 +1,33 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchProgram, fetchPrograms } from '../../api/epg';
+import { ProgramType } from '../../helpers/interfaces';
 
 interface EpgState {
-    programs: unknown,
-    program: unknown,
+    programs: [ProgramType],
+    program: ProgramType,
     status: string,
     error: string,
 }
 
 const initialState: EpgState = {
-    programs: [],
-    program: {},
+    programs: [{
+        title: '',
+        description: '',
+        category: '',
+        pictures: {
+            thumbnails:['']
+        },
+        id: null,
+    }],
+    program: {
+        title: '',
+        description: '',
+        category: '',
+        pictures: {
+            thumbnails:['']
+        },
+        id: null,
+    },
     status: '',
     error: ''
 };
@@ -58,8 +75,8 @@ export const epg = createSlice({
     }
 });
 
-export const selectPrograms = (state: { epg: { programs: unknown; }; }) :unknown => state.epg.programs;
-export const selectProgram = (state: { epg: { program: unknown; }; }) :unknown => state.epg.program;
+export const selectPrograms = (state: { epg: { programs: [ProgramType]; }; }) :[ProgramType] => state.epg.programs;
+export const selectProgram = (state: { epg: { program: ProgramType; }; }) :ProgramType => state.epg.program;
 
 
 export default epg.reducer;

@@ -16,3 +16,19 @@ body {
     height: 100%;
     width: 100%;
 }
+
+.m-t-2 {
+    margin-top: 1em;
+}
+
+.container {
+    align-items: center;
+}
+
+.rounded {
+    max-width: inherit;
+}
+
+h3 {
+    text-align: center;
+}

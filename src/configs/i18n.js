@@ -5,7 +5,7 @@ import fr from '../locales/fr';
 export const LANGUAGES = ['en', 'fr'];
 
 i18n.use(initReactI18next).init({
-    ns: ['common'],
+    ns: ['common', 'vod', 'epg'],
     defaultNS: 'common',
     interpolation: { escapeValue: false },
     fallbackLng: 'en',

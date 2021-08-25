@@ -1,3 +1,4 @@
 import counter from './counter';
-
-export { counter };
+import epg from './epg';
+import vod from './vod';
+export { counter, vod, epg };

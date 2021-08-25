@@ -25,6 +25,10 @@ body {
     align-items: center;
 }
 
+.rounded {
+    max-width: inherit;
+}
+
 h3 {
     text-align: center;
 }

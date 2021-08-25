@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
-import Detail from '../../components/detail';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getProgram, selectProgram } from '../../redux/epg';
+import Detail from '../../../components/detail';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { getProgram, selectProgram } from '../../../redux/epg';
 
 export function EPGdetails ({id}): JSX.Element {
     const dispatch = useAppDispatch();

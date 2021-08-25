@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
-import Detail from '../../components/detail';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getContent, selectContent } from '../../redux/vod';
+import Detail from '../../../components/detail';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { getContent, selectContent } from '../../../redux/vod';
 
 export function VODdetails ({id}): JSX.Element {
     const dispatch = useAppDispatch();
